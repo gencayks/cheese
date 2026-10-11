@@ -845,7 +845,7 @@ function DeviceListView({ snapshot }: { snapshot: ControlSnapshot }): ReactNode 
               >
                   <span className="device-tile-name">{device.name}</span>
                   {device.transport === "bridge" ? (
-                    <span className="device-tile-transport" title="Connected through OpenMouse Bridge">
+                    <span className="device-tile-transport" title="Connected through Cheese Bridge">
                       Bridge
                     </span>
                   ) : null}

@@ -84,7 +84,7 @@ test("the deployed CSP allows every origin the app talks to", () => {
 
 test("the deployed CSP never upgrades the loopback bridge to https", () => {
   // upgrade-insecure-requests would rewrite http://127.0.0.1:17846 and break
-  // communication with the local OpenMouse Bridge.
+  // communication with the local Cheese Bridge.
   assert.ok(!CSP.includes("upgrade-insecure-requests"));
 });
 

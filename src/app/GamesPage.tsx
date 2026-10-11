@@ -1,4 +1,4 @@
-// The Games page — only reachable while OpenMouse Bridge is actually
+// The Games page — only reachable while Cheese Bridge is actually
 // reachable, i.e. `navigator.hid` is currently Bridge's WebHID shim, not the
 // browser's own implementation (see bridge-hid.ts). Lists the games Bridge
 // knows how to detect, which it syncs from the same `games.json` Desktop

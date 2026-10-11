@@ -1,7 +1,7 @@
 {
   "id": "/",
-  "name": "OpenMouse",
-  "short_name": "OpenMouse",
+  "name": "Cheese",
+  "short_name": "Cheese",
   "description": "Manage supported gaming mice in one place — DPI, polling rate, battery, and sensor settings.",
   "start_url": "/",
   "scope": "/",

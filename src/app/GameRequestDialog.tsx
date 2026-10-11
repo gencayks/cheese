@@ -254,7 +254,7 @@ export function GameRequestDialog({ open, onClose, locale = "en", bridgeActive, 
       >
         <header>
           <div>
-            <p className="overline">OpenMouse</p>
+            <p className="overline">Cheese</p>
             <h2 id="gamereq-dialog-title">
               {t(locale, step === "form" ? "gamereq.title" : "gamereq.previewTitle")}
             </h2>

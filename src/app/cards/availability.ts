@@ -147,7 +147,7 @@ function computeCardAvailability(snapshot: ControlSnapshot): CardAvailability {
     dpi: ready,
     // The Attack Shark X11's settings channel is native-only (settingsReady
     // stays false), but its polling rate is still controllable through
-    // OpenMouse Bridge — see isNativeAttackSharkX11 in device/controller.ts.
+    // Cheese Bridge — see isNativeAttackSharkX11 in device/controller.ts.
     polling: ready || (
       status.brand === "Attack Shark"
       && status.name === "Attack Shark X11"

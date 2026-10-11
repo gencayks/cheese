@@ -21,7 +21,7 @@ export function unsupportedNotice(env: BrowserEnvironment): UnsupportedNotice | 
   if (!env.chromium) {
     return {
       headline: "Install Bridge, or use a Chromium browser.",
-      detail: "This browser has no WebHID. OpenMouse Bridge gives it native access to your mouse; without it, use Chrome, Edge, or Helium.",
+      detail: "This browser has no WebHID. Cheese Bridge gives it native access to your mouse; without it, use Chrome, Edge, or Helium.",
     };
   }
   if (!env.secureContext) {

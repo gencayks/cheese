@@ -1,25 +1,22 @@
-# OpenMouse
+# 🧀 Cheese
+
+Forked from [OpenMouse](https://github.com/OpenMouse-Project/openmouse) — the Linux-first build. AGPL-3.0, see [License](#license).
 
 <a href="https://trendshift.io/repositories/103495?utm_source=trendshift-badge&amp;utm_medium=badge&amp;utm_campaign=badge-trendshift-103495" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/103495/daily?language=TypeScript" alt="OpenMouse-Project%2Fopenmouse | Trendshift" width="250" height="55"/></a>
 
 <p>
-  <a href="https://github.com/OpenMouse-Project/openmouse/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/OpenMouse-Project/openmouse/ci.yml?branch=main&label=CI" alt="CI"/></a>
-  <a href="LICENSE"><img src="https://img.shields.io/github/license/OpenMouse-Project/openmouse" alt="License"/></a>
-  <a href="https://github.com/OpenMouse-Project/openmouse/stargazers"><img src="https://img.shields.io/github/stars/OpenMouse-Project/openmouse" alt="Stars"/></a>
+  <a href="https://github.com/gencayks/openmouse/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/gencayks/openmouse/ci.yml?branch=main&label=CI" alt="CI"/></a>
+  <a href="LICENSE"><img src="https://img.shields.io/github/license/gencayks/openmouse" alt="License"/></a>
+  <a href="https://github.com/gencayks/openmouse/stargazers"><img src="https://img.shields.io/github/stars/gencayks/openmouse" alt="Stars"/></a>
 </p>
 
-OpenMouse is a browser-based control panel for supported gaming mice.
+Cheese is a browser-based control panel for supported gaming mice.
 
 Connect a mouse, view its information, and change supported settings such as DPI
 and polling rate without installing a different app for every brand.
 
-<a href="https://control.openmouse.app/"><img src=".github/assets/control-panel-card.svg" width="520" alt="Open the OpenMouse control panel"/></a>
 
-Works in Chromium-based browsers that support WebHID. Learn more at
-[openmouse.app](https://openmouse.app/).
 
-This branch is deployed as the public development control panel at
-[control.openmouse.app](https://control.openmouse.app/).
 
 ## Development
 
@@ -36,7 +33,7 @@ npm run check
 
 ### Linux WebHID permissions
 
-If a device appears in Chromium's picker but OpenMouse reports `Failed to open
+If a device appears in Chromium's picker but Cheese reports `Failed to open
 the device`, check the permissions on its `/dev/hidraw*` nodes. Linux does not
 grant user access to every HID device by default.
 
@@ -55,7 +52,7 @@ SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3554", ATTRS{idProduct}=="f58f", TAG+="ua
 SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3554", ATTRS{idProduct}=="f58e", TAG+="uaccess"
 ```
 
-Save it as `/etc/udev/rules.d/70-openmouse-vxe.rules`, reload the rules, then
+Save it as `/etc/udev/rules.d/70-cheese-vxe.rules`, reload the rules, then
 unplug and reconnect both devices:
 
 ```bash
@@ -69,7 +66,7 @@ to only the `0xff02:0x0002` collection's node is insufficient.
 ### Linux install
 
 The generated rules above ship for every supported device in
-`udev/70-openmouse.rules`. The one-command install from a checkout:
+`udev/70-cheese.rules`. The one-command install from a checkout:
 
 ```bash
 sudo ./scripts/install-linux.sh
@@ -78,7 +75,7 @@ sudo ./scripts/install-linux.sh
 No checkout handy? Fetch the installer and pipe it to a root shell:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/gencayks/openmouse/linux-first/scripts/install-linux.sh | sudo bash
+curl -fsSL https://raw.githubusercontent.com/gencayks/openmouse/main/scripts/install-linux.sh | sudo bash
 ```
 
 Arch users can install the whole panel as a package (web panel, udev rules,
@@ -92,15 +89,15 @@ or fully by hand:
 
 ```bash
 npm ci && npm run build
-sudo install -Dm755 distro/aur/openmouse.sh /usr/bin/openmouse
-sudo install -Dm644 distro/aur/openmouse.desktop /usr/share/applications/openmouse.desktop
-sudo install -Dm644 dist/icon-512.png /usr/share/icons/hicolor/512x512/apps/openmouse.png
-sudo mkdir -p /usr/share/openmouse && sudo cp -r dist/. /usr/share/openmouse/
+sudo install -Dm755 distro/aur/cheese.sh /usr/bin/cheese
+sudo install -Dm644 distro/aur/cheese.desktop /usr/share/applications/cheese.desktop
+sudo install -Dm644 dist/icon-512.png /usr/share/icons/hicolor/512x512/apps/cheese.png
+sudo mkdir -p /usr/share/cheese && sudo cp -r dist/. /usr/share/cheese/
 sudo ./scripts/install-linux.sh   # udev rules + reload
 ```
 
-Launch with the `openmouse` command (or the app menu). It serves the bundled
-panel on `http://127.0.0.1:8080/` (`OPENMOUSE_PORT` overrides the port) and
+Launch with the `cheese` command (or the app menu). It serves the bundled
+panel on `http://127.0.0.1:8080/` (`CHEESE_PORT` overrides the port) and
 opens your default browser — use a Chromium-based one, only those have
 WebHID.
 
@@ -171,10 +168,10 @@ Hardware-specific validation checklists live in the protocol repository's
 
 ## Star history
 
-<a href="https://star-history.com/#OpenMouse-Project/openmouse&Date">
+<a href="https://star-history.com/#gencayks/openmouse&Date">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=OpenMouse-Project/openmouse&type=Date&theme=dark"/>
-    <img src="https://api.star-history.com/svg?repos=OpenMouse-Project/openmouse&type=Date" alt="Star history chart"/>
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=gencayks/openmouse&type=Date&theme=dark"/>
+    <img src="https://api.star-history.com/svg?repos=gencayks/openmouse&type=Date" alt="Star history chart"/>
   </picture>
 </a>
 

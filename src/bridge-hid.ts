@@ -1,4 +1,4 @@
-// A `navigator.hid` implementation backed by OpenMouse Bridge's loopback
+// A `navigator.hid` implementation backed by Cheese Bridge's loopback
 // socket, so browsers without WebHID — Firefox, Safari — can drive a mouse
 // through the same control panel Chrome uses.
 //
@@ -40,7 +40,7 @@ function bridgeLog(
   const detail = typeof options.detail === "string"
     ? options.detail
     : options.detail === undefined ? undefined : JSON.stringify(options.detail);
-  const prefix = `[OpenMouse Bridge] ${label}`;
+  const prefix = `[Cheese Bridge] ${label}`;
   if (level === "warn") console.warn(prefix, options.detail ?? "");
   else if (level === "info") console.info(prefix, options.detail ?? "");
   else console.debug(prefix, options.detail ?? "");
@@ -268,7 +268,7 @@ class BridgeClient {
   constructor(transport: BridgeTransport) {
     this.#transport = transport;
     transport.onMessage = (frame) => this.#receive(frame);
-    transport.onClose = () => this.#fail(new Error("OpenMouse Bridge disconnected."));
+    transport.onClose = () => this.#fail(new Error("Cheese Bridge disconnected."));
   }
 
   get devices(): Map<string, BridgeHidDevice> {
@@ -277,7 +277,7 @@ class BridgeClient {
 
   request(command: Command): Promise<Reply> {
     if (this.#closed) {
-      const error = new Error("OpenMouse Bridge disconnected.");
+      const error = new Error("Cheese Bridge disconnected.");
       bridgeLog("warn", "request rejected", { detail: { command: command.type, error: error.message } });
       return Promise.reject(error);
     }
@@ -290,7 +290,7 @@ class BridgeClient {
     return new Promise<Reply>((resolve, reject) => {
       const timer = setTimeout(() => {
         this.#pending.delete(id);
-        const error = new Error(`OpenMouse Bridge did not answer ${command.type} in time.`);
+        const error = new Error(`Cheese Bridge did not answer ${command.type} in time.`);
         bridgeLog("warn", "request timed out", {
           detail: { id, command: command.type, device, elapsedMs: Math.round(performance.now() - started) },
         });
@@ -394,7 +394,7 @@ class BridgeClient {
       }
       pending.resolve(message);
     } else {
-      const error = new Error(message.error ?? "OpenMouse Bridge rejected the request.");
+      const error = new Error(message.error ?? "Cheese Bridge rejected the request.");
       bridgeLog("warn", "request failed", { detail: { ...detail, error: error.message } });
       pending.reject(error);
     }

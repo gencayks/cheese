@@ -24,7 +24,7 @@
 // (non-zero exit) — the "diff against the device table" is that failure.
 //
 // Usage:
-//   node scripts/generate-udev-rules.mjs            # write udev/70-openmouse.rules
+//   node scripts/generate-udev-rules.mjs            # write udev/70-cheese.rules
 //   node scripts/generate-udev-rules.mjs --check    # exit non-zero if the
 //                                                  # checked-in file is stale
 //
@@ -37,7 +37,7 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 
 const here = dirname(fileURLToPath(import.meta.url));
 const root = join(here, "..");
-const RULES_PATH = join(root, "udev", "70-openmouse.rules");
+const RULES_PATH = join(root, "udev", "70-cheese.rules");
 
 // Every VID below is evidenced by @openmouse/protocol. Citation key:
 //   V=x  — protocol drivers/vendors.js VENDOR_ID.<name> (decimal x)

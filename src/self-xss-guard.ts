@@ -18,7 +18,7 @@ const WARNING_TITLE = "Stop!";
 const WARNING_BODY =
   "This console is meant for developers. If someone told you to copy and paste " +
   "code here, it is a scam: pasting it can hand over your connected mouse and " +
-  "your OpenMouse settings. Never paste code you do not fully understand.";
+  "your Cheese settings. Never paste code you do not fully understand.";
 
 /** Prints the production-only console warning. Call once. */
 export function startSelfXssGuard(): void {
