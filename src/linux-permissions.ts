@@ -9,9 +9,10 @@
  */
 
 /** Owner/repo/ref serving the installer for the curl|bash fix command.
- * Confirm the canonical home with g if this fork moves upstream. */
+ * NOTE: pinned to the `linux-first` branch until it merges — flip to `main`
+ * on merge (the installer only exists on this branch today; `main` 404s). */
 export const LINUX_UDEV_INSTALLER_URL =
-  "https://raw.githubusercontent.com/gencayks/openmouse/main/scripts/install-linux.sh";
+  "https://raw.githubusercontent.com/gencayks/openmouse/linux-first/scripts/install-linux.sh";
 
 /** The exact command the panel offers (copied verbatim by its copy button). */
 export function linuxUdevFixCommand(): string {
