@@ -18,9 +18,8 @@
 set -euo pipefail
 
 DEST="/etc/udev/rules.d/70-openmouse.rules"
-# NOTE: pinned to the `linux-first` branch until it merges — flip to `main`
-# on merge (the rules file only exists on this branch today; `main` 404s).
-RULES_URL="${OPENMOUSE_RULES_URL:-https://raw.githubusercontent.com/gencayks/openmouse/linux-first/udev/70-openmouse.rules}"
+# NOTE: flipped to `main` on merge of the linux-first branch.
+RULES_URL="${OPENMOUSE_RULES_URL:-https://raw.githubusercontent.com/gencayks/openmouse/main/udev/70-openmouse.rules}"
 
 # A piped script has no file backing ($0 is "bash"); only re-exec via sudo
 # when this script exists on disk, otherwise a re-exec would hang on stdin.

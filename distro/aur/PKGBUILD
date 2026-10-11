@@ -1,6 +1,5 @@
 # Maintainer: gencayks
-# NOTE: tracks the `linux-first` branch until it merges — drop the
-# #branch pin (and the -git suffix if a release is tagged) on merge.
+# NOTE: tracks `main` since the linux-first branch merged. Drop the #branch pin if a release is tagged.
 pkgname=openmouse-git
 pkgver=2.0.0.r1206.200774e
 pkgrel=1
@@ -11,7 +10,7 @@ license=('AGPL-3.0-or-later')
 depends=('python' 'xdg-utils')
 makedepends=('nodejs' 'npm')
 optdepends=('chromium: WebHID-capable browser for the panel')
-source=("${pkgname}::git+${url}.git#branch=linux-first")
+source=("${pkgname}::git+${url}.git#branch=main")
 sha256sums=('SKIP')
 install=openmouse.install
 
