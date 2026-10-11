@@ -66,6 +66,44 @@ Grant access to every `hidraw` node for each product. Chromium opens the HID
 device before OpenMouse selects its vendor configuration collection, so access
 to only the `0xff02:0x0002` collection's node is insufficient.
 
+### Linux install
+
+The generated rules above ship for every supported device in
+`udev/70-openmouse.rules`. The one-command install from a checkout:
+
+```bash
+sudo ./scripts/install-linux.sh
+```
+
+No checkout handy? Fetch the installer and pipe it to a root shell:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/gencayks/openmouse/linux-first/scripts/install-linux.sh | sudo bash
+```
+
+Arch users can install the whole panel as a package (web panel, udev rules,
+desktop entry). It is not on the AUR yet; build it from this checkout:
+
+```bash
+cd distro/aur && makepkg -si
+```
+
+or fully by hand:
+
+```bash
+npm ci && npm run build
+sudo install -Dm755 distro/aur/openmouse.sh /usr/bin/openmouse
+sudo install -Dm644 distro/aur/openmouse.desktop /usr/share/applications/openmouse.desktop
+sudo install -Dm644 dist/icon-512.png /usr/share/icons/hicolor/512x512/apps/openmouse.png
+sudo mkdir -p /usr/share/openmouse && sudo cp -r dist/. /usr/share/openmouse/
+sudo ./scripts/install-linux.sh   # udev rules + reload
+```
+
+Launch with the `openmouse` command (or the app menu). It serves the bundled
+panel on `http://127.0.0.1:8080/` (`OPENMOUSE_PORT` overrides the port) and
+opens your default browser — use a Chromium-based one, only those have
+WebHID.
+
 ## Community
 
 Questions, device requests, bug reports, or just want to follow along? Come
