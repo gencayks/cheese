@@ -178,7 +178,7 @@ export function FeedbackDialog({ open, onClose, locale = "en", canAttachDiagnost
       >
         <header>
           <div>
-            <p className="overline">OpenMouse</p>
+            <p className="overline">Cheese</p>
             <h2 id="feedback-dialog-title">{t(locale, "fb.title")}</h2>
           </div>
           <button type="button" onClick={onClose} aria-label={t(locale, "common.close")}>×</button>

@@ -1,4 +1,4 @@
-// Per-game settings profile, pushed to OpenMouse Bridge's `/v1/profiles` so it
+// Per-game settings profile, pushed to Cheese Bridge's `/v1/profiles` so it
 // keeps applying the moment Bridge sees the game come to the foreground —
 // even with this tab closed. There is no browser-side equivalent: only
 // Bridge watches running processes, so every profile here is Bridge-backed,

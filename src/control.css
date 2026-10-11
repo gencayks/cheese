@@ -4427,7 +4427,7 @@ body { height: 100vh; overflow: hidden; }
 .import-hits-actions { display: flex; gap: 0.5rem; }
 .delete-hits-confirm { border-color: color-mix(in srgb, var(--destructive) 55%, var(--border)); color: var(--destructive); }
 
-/* OpenMouse AI chat overlay + launcher button. */
+/* Cheese AI chat overlay + launcher button. */
 .ai-launcher {
   position: absolute;
   inset-inline-end: 1.25rem;

@@ -223,14 +223,14 @@ import type {
 } from "./types";
 
 export const BUILD_LABEL = `${__BUILD_CHANNEL__.toUpperCase()} · v${__BUILD_ID__ || __APP_VERSION__}`;
-const DEFAULT_TITLE = typeof document === "undefined" ? "OpenMouse Control" : document.title;
+const DEFAULT_TITLE = typeof document === "undefined" ? "Cheese" : document.title;
 const ACTIVE_DEVICE_STORAGE_KEY = "openmouse.active-device";
 const WLMOUSE_SLEEP_NEVER = 0xffff;
 export const RATE_STEPS_HZ = [125, 250, 500, 1000, 2000, 4000, 8000];
 // Real Attack Shark X11 hardware exposes no HID feature reports the browser
 // can reach (see attackSharkNativeOnlyMessage in @openmouse/protocol); the
 // driver reports it with `ui.settingsReady: false`. Polling rate can still be
-// set through OpenMouse Bridge, which claims the native interface directly,
+// set through Cheese Bridge, which claims the native interface directly,
 // so this app-side allowlist of rates and a small local cache of the last
 // value we told Bridge to apply (the firmware exposes no read-back command)
 // stand in for what the driver would normally advertise.
@@ -2570,7 +2570,7 @@ function applyStatusInner(deviceStatus: MouseStatus, statusKey?: string): void {
       supportedPollingRates: X11_POLLING_RATES_HZ,
       ui: {
         ...deviceStatus.ui,
-        pollingNote: "Native control through OpenMouse Bridge. The displayed rate is the "
+        pollingNote: "Native control through Cheese Bridge. The displayed rate is the "
           + "last value applied here; this firmware does not expose a readable current-rate command.",
       },
     };
@@ -2746,7 +2746,7 @@ async function waitForControllerIdle(): Promise<void> {
   }
 }
 
-/** A wedged OpenMouse Bridge rejects getDevices(); toast it instead of failing silently. */
+/** A wedged Cheese Bridge rejects getDevices(); toast it instead of failing silently. */
 async function authorizedDeviceGroups(): Promise<HIDDevice[][] | null> {
   try {
     return logicalDeviceGroups(await navigator.hid?.getDevices() ?? []);

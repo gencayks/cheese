@@ -1,0 +1,10 @@
+post_install() {
+  udevadm control --reload-rules 2>/dev/null || true
+  echo "Cheese installed. Unplug your mouse (and receiver, if any) and plug"
+  echo "it back in, then launch Cheese from your application menu."
+  echo "hidraw access comes from /usr/lib/udev/rules.d/70-cheese.rules."
+}
+
+post_upgrade() {
+  post_install
+}

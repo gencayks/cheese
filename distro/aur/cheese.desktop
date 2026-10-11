@@ -1,9 +1,9 @@
 [Desktop Entry]
 Type=Application
 Version=1.0
-Name=OpenMouse
+Name=Cheese
 Comment=Configure a supported mouse (local web panel)
-Exec=openmouse
-Icon=openmouse
+Exec=cheese
+Icon=cheese
 Terminal=false
 Categories=Settings;HardwareSettings;

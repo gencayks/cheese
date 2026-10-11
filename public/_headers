@@ -13,7 +13,7 @@
 # `src/trusted-types.ts`.
 #
 # `upgrade-insecure-requests` is deliberately absent. It would rewrite the
-# loopback OpenMouse Bridge origin (http://127.0.0.1:17846) to https and break
+# loopback Cheese Bridge origin (http://127.0.0.1:17846) to https and break
 # communication with local hardware.
 #
 # `Cross-Origin-Embedder-Policy` is deliberately absent. See the comment in

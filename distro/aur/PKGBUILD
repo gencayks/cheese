@@ -1,18 +1,19 @@
 # Maintainer: gencayks
-# NOTE: tracks `main` since the linux-first branch merged. Drop the #branch pin if a release is tagged.
-pkgname=openmouse-git
-pkgver=2.0.0.r1206.200774e
+pkgname=cheese-git
+pkgver=2.0.0.r1210.b1572f1
 pkgrel=1
-pkgdesc="Linux-first OpenMouse web panel for configuring supported mice over WebHID"
+pkgdesc="Cheese — Linux-first web panel for configuring supported mice over WebHID"
 arch=('any')
 url="https://github.com/gencayks/openmouse"
 license=('AGPL-3.0-or-later')
 depends=('python' 'xdg-utils')
 makedepends=('nodejs' 'npm')
 optdepends=('chromium: WebHID-capable browser for the panel')
+conflicts=('openmouse-git')
+replaces=('openmouse-git')
 source=("${pkgname}::git+${url}.git#branch=main")
 sha256sums=('SKIP')
-install=openmouse.install
+install=cheese.install
 
 pkgver() {
   cd "${pkgname}"
@@ -27,11 +28,11 @@ build() {
 
 package() {
   cd "${pkgname}"
-  install -dm755 "${pkgdir}/usr/share/openmouse"
-  cp -r dist/. "${pkgdir}/usr/share/openmouse/"
-  install -Dm644 udev/70-openmouse.rules "${pkgdir}/usr/lib/udev/rules.d/70-openmouse.rules"
-  install -Dm755 distro/aur/openmouse.sh "${pkgdir}/usr/bin/openmouse"
-  install -Dm644 distro/aur/openmouse.desktop "${pkgdir}/usr/share/applications/openmouse.desktop"
-  install -Dm644 dist/icon-512.png "${pkgdir}/usr/share/icons/hicolor/512x512/apps/openmouse.png"
+  install -dm755 "${pkgdir}/usr/share/cheese"
+  cp -r dist/. "${pkgdir}/usr/share/cheese/"
+  install -Dm644 udev/70-cheese.rules "${pkgdir}/usr/lib/udev/rules.d/70-cheese.rules"
+  install -Dm755 distro/aur/cheese.sh "${pkgdir}/usr/bin/cheese"
+  install -Dm644 distro/aur/cheese.desktop "${pkgdir}/usr/share/applications/cheese.desktop"
+  install -Dm644 dist/icon-512.png "${pkgdir}/usr/share/icons/hicolor/512x512/apps/cheese.png"
   install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
 }

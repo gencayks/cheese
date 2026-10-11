@@ -647,7 +647,7 @@ export function HardwareTestPage({ snapshot }: { snapshot: ControlSnapshot }): R
                 )}
                 <div className="mouse-test-device-row">
                   <span className="mouse-test-device-key">{t(locale, "hw.transport")}</span>
-                  <span className="mouse-test-device-val">{info.transport === "bridge" ? "OpenMouse Bridge" : "WebHID"}</span>
+                  <span className="mouse-test-device-val">{info.transport === "bridge" ? "Cheese Bridge" : "WebHID"}</span>
                 </div>
                 {info.connectionType && (
                   <div className="mouse-test-device-row">

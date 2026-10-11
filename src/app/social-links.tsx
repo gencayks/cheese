@@ -5,7 +5,7 @@ import { useEffect, useState, type ReactNode } from "react";
    (openmouse.app), so both surfaces link to the same places and render the
    same GitHub star count without duplicating the SVG marks. */
 
-export const GITHUB_REPO = "OpenMouse-Project/openmouse";
+export const GITHUB_REPO = "gencayks/openmouse";
 export const DISCORD_URL = "https://discord.gg/yxC9jzMdw6";
 export const TWITTER_URL = "https://x.com/openmouseapp";
 export const GITHUB_URL = `https://github.com/${GITHUB_REPO}`;
