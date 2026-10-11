@@ -1,10 +1,10 @@
 # Maintainer: gencayks
 pkgname=cheese-git
-pkgver=2.0.0.r1210.b1572f1
+pkgver=2.0.0.r1212.8c515f8
 pkgrel=1
 pkgdesc="Cheese — Linux-first web panel for configuring supported mice over WebHID"
 arch=('any')
-url="https://github.com/gencayks/openmouse"
+url="https://github.com/gencayks/cheese"
 license=('AGPL-3.0-or-later')
 depends=('python' 'xdg-utils')
 makedepends=('nodejs' 'npm')

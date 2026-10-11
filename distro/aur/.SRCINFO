@@ -1,8 +1,8 @@
 pkgbase = cheese-git
 	pkgdesc = Cheese — Linux-first web panel for configuring supported mice over WebHID
-	pkgver = 2.0.0.r1210.b1572f1
+	pkgver = 2.0.0.r1212.8c515f8
 	pkgrel = 1
-	url = https://github.com/gencayks/openmouse
+	url = https://github.com/gencayks/cheese
 	install = cheese.install
 	arch = any
 	license = AGPL-3.0-or-later
@@ -13,7 +13,7 @@ pkgbase = cheese-git
 	optdepends = chromium: WebHID-capable browser for the panel
 	conflicts = openmouse-git
 	replaces = openmouse-git
-	source = cheese-git::git+https://github.com/gencayks/openmouse.git#branch=main
+	source = cheese-git::git+https://github.com/gencayks/cheese.git#branch=main
 	sha256sums = SKIP
 
 pkgname = cheese-git

@@ -19,7 +19,7 @@ set -euo pipefail
 
 DEST="/etc/udev/rules.d/70-cheese.rules"
 # NOTE: flipped to `main` on merge of the linux-first branch.
-RULES_URL="${CHEESE_RULES_URL:-https://raw.githubusercontent.com/gencayks/openmouse/main/udev/70-cheese.rules}"
+RULES_URL="${CHEESE_RULES_URL:-https://raw.githubusercontent.com/gencayks/cheese/main/udev/70-cheese.rules}"
 
 # A piped script has no file backing ($0 is "bash"); only re-exec via sudo
 # when this script exists on disk, otherwise a re-exec would hang on stdin.

@@ -5,9 +5,9 @@ Forked from [OpenMouse](https://github.com/OpenMouse-Project/openmouse) — the 
 <a href="https://trendshift.io/repositories/103495?utm_source=trendshift-badge&amp;utm_medium=badge&amp;utm_campaign=badge-trendshift-103495" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/103495/daily?language=TypeScript" alt="OpenMouse-Project%2Fopenmouse | Trendshift" width="250" height="55"/></a>
 
 <p>
-  <a href="https://github.com/gencayks/openmouse/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/gencayks/openmouse/ci.yml?branch=main&label=CI" alt="CI"/></a>
-  <a href="LICENSE"><img src="https://img.shields.io/github/license/gencayks/openmouse" alt="License"/></a>
-  <a href="https://github.com/gencayks/openmouse/stargazers"><img src="https://img.shields.io/github/stars/gencayks/openmouse" alt="Stars"/></a>
+  <a href="https://github.com/gencayks/cheese/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/gencayks/cheese/ci.yml?branch=main&label=CI" alt="CI"/></a>
+  <a href="LICENSE"><img src="https://img.shields.io/github/license/gencayks/cheese" alt="License"/></a>
+  <a href="https://github.com/gencayks/cheese/stargazers"><img src="https://img.shields.io/github/stars/gencayks/cheese" alt="Stars"/></a>
 </p>
 
 Cheese is a browser-based control panel for supported gaming mice.
@@ -75,7 +75,7 @@ sudo ./scripts/install-linux.sh
 No checkout handy? Fetch the installer and pipe it to a root shell:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/gencayks/openmouse/main/scripts/install-linux.sh | sudo bash
+curl -fsSL https://raw.githubusercontent.com/gencayks/cheese/main/scripts/install-linux.sh | sudo bash
 ```
 
 Arch users can install the whole panel as a package (web panel, udev rules,
@@ -168,10 +168,10 @@ Hardware-specific validation checklists live in the protocol repository's
 
 ## Star history
 
-<a href="https://star-history.com/#gencayks/openmouse&Date">
+<a href="https://star-history.com/#gencayks/cheese&Date">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=gencayks/openmouse&type=Date&theme=dark"/>
-    <img src="https://api.star-history.com/svg?repos=gencayks/openmouse&type=Date" alt="Star history chart"/>
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=gencayks/cheese&type=Date&theme=dark"/>
+    <img src="https://api.star-history.com/svg?repos=gencayks/cheese&type=Date" alt="Star history chart"/>
   </picture>
 </a>
 
