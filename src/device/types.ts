@@ -162,6 +162,15 @@ export interface Toast {
   leaving?: boolean;
 }
 
+/** Linux hidraw permission fix offered after a picker-succeeds/open-denied
+ * failure. Null when there is nothing to fix (or the fix was dismissed). */
+export interface LinuxPermissionFix {
+  /** Human label of the denied device, with USB IDs. */
+  device: string;
+  /** Exact shell command installing the udev rules. */
+  command: string;
+}
+
 export interface ControlSnapshot {
   deviceStatus: MouseStatus | null;
   status: MouseStatus | null;
@@ -174,6 +183,7 @@ export interface ControlSnapshot {
   onboardStatus: string;
   connectDisabled: boolean;
   connectLabel: string;
+  linuxPermission: LinuxPermissionFix | null;
 
   toasts: Toast[];
 

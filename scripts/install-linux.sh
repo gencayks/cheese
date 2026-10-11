@@ -1,38 +1,68 @@
 #!/usr/bin/env bash
 # One-command installer for the OpenMouse Linux hidraw access rules.
 #
-# Installs udev/70-openmouse.rules to /etc/udev/rules.d/70-openmouse.rules so
+# Installs the rules to /etc/udev/rules.d/70-openmouse.rules so
 # Chromium/WebHID can open supported mice without running as root, reloads
 # udev, and prints the unplug/reconnect step that applies the rules.
 #
 # Usage:
-#   ./scripts/install-linux.sh            # re-runs sudo itself when needed
+#   ./scripts/install-linux.sh            # from a checkout; re-runs sudo itself
+#   curl -fsSL <installer-url> | sudo bash   # no checkout needed; the rules
+#                                            # are downloaded instead
 #
-# The rules are generated from src/supported-devices-data.ts; when node is
-# available this script regenerates them first so the installed file always
-# matches the checkout. Without node it installs the checked-in snapshot.
+# From a checkout the rules are generated from src/supported-devices-data.ts;
+# when node is available this script regenerates them first so the installed
+# file always matches the checkout. Without a checkout (curl|bash) the rules
+# are fetched from RULES_URL (override with OPENMOUSE_RULES_URL).
 
 set -euo pipefail
 
-SCRIPT_DIR="$(cd -- "$(dirname -- "${0}")" && pwd)"
-REPO_ROOT="$(cd -- "${SCRIPT_DIR}/.." && pwd)"
-SNAPSHOT="${REPO_ROOT}/udev/70-openmouse.rules"
 DEST="/etc/udev/rules.d/70-openmouse.rules"
+RULES_URL="${OPENMOUSE_RULES_URL:-https://raw.githubusercontent.com/gencayks/openmouse/main/udev/70-openmouse.rules}"
 
+# A piped script has no file backing ($0 is "bash"); only re-exec via sudo
+# when this script exists on disk, otherwise a re-exec would hang on stdin.
+SCRIPT_FILE="${BASH_SOURCE[0]:-$0}"
 if [ "$(id -u)" -ne 0 ]; then
-    exec sudo -- "${0}" "$@"
+    if [ -f "${SCRIPT_FILE}" ]; then
+        exec sudo -- "${SCRIPT_FILE}" "$@"
+    fi
+    echo "Run this script as root (e.g. curl ... | sudo bash)." >&2
+    exit 1
 fi
 
-SOURCE="${SNAPSHOT}"
-if command -v node >/dev/null 2>&1; then
-    # Regenerate first so the installed file always matches this checkout.
-    # (This also refreshes the snapshot — commit it if it changed.)
-    node "${REPO_ROOT}/scripts/generate-udev-rules.mjs" >/dev/null
-else
-    echo "node not found; installing the checked-in snapshot." >&2
+SOURCE=""
+CLEANUP=""
+if [ -f "${SCRIPT_FILE}" ]; then
+    SNAPSHOT="$(cd -- "$(dirname -- "${SCRIPT_FILE}")/.." && pwd)/udev/70-openmouse.rules"
+    if [ -f "${SNAPSHOT}" ]; then
+        if command -v node >/dev/null 2>&1; then
+            # Regenerate first so the installed file always matches this
+            # checkout (this also refreshes the snapshot — commit it if it
+            # changed). A failed regeneration still installs the snapshot.
+            node "$(dirname -- "${SNAPSHOT}")/../scripts/generate-udev-rules.mjs" >/dev/null \
+                || echo "regeneration failed; installing the checked-in snapshot." >&2
+        else
+            echo "node not found; installing the checked-in snapshot." >&2
+        fi
+        SOURCE="${SNAPSHOT}"
+    fi
+fi
+if [ -z "${SOURCE}" ]; then
+    SOURCE="$(mktemp)"
+    CLEANUP="${SOURCE}"
+    if command -v curl >/dev/null 2>&1; then
+        curl -fsSL "${RULES_URL}" -o "${SOURCE}"
+    elif command -v wget >/dev/null 2>&1; then
+        wget -qO "${SOURCE}" "${RULES_URL}"
+    else
+        echo "Need curl or wget to download the rules." >&2
+        exit 1
+    fi
 fi
 
 install -m 0644 "${SOURCE}" "${DEST}"
+if [ -n "${CLEANUP}" ]; then rm -f "${CLEANUP}"; fi
 udevadm control --reload-rules
 # Best effort: re-apply rules to already-plugged devices so a reconnect is
 # often unnecessary. Unplugging still always works — see below.
