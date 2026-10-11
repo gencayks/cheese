@@ -2582,6 +2582,79 @@ body { height: 100vh; overflow: hidden; }
 .reduce-interface-motion .toast { animation: none; }
 .reduce-interface-motion .toast.is-leaving { animation-duration: .01s; }
 
+/* Linux hidraw permission fix panel: floating rounded surface with a
+   destructive accent edge, theme tokens only. */
+.linux-perm-panel {
+  width: min(34rem, 100%);
+  margin: 0 auto 1.25rem;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--edge);
+  border-radius: 16px;
+  background: linear-gradient(180deg, var(--surface-strong), var(--surface-dialog));
+  box-shadow: inset 3px 0 0 var(--destructive), 0 12px 34px rgb(0 0 0 / .38);
+}
+.welcome-with-devices .linux-perm-panel { margin-top: 1rem; }
+.linux-perm-title {
+  display: block;
+  color: var(--text-hover);
+  font-size: .95rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+.linux-perm-body, .linux-perm-intro {
+  margin: .5rem 0 0;
+  color: var(--text-soft);
+  font-size: .82rem;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+.linux-perm-command-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: .6rem;
+  margin-top: .7rem;
+}
+.linux-perm-command {
+  flex: 1 1 16rem;
+  min-width: 0;
+  padding: .55rem .7rem;
+  border: 1px solid var(--edge);
+  border-radius: 8px;
+  background: var(--surface-input);
+  color: var(--text);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: .76rem;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+  user-select: all;
+}
+.linux-perm-copy {
+  flex: none;
+  align-self: center;
+  padding: .5rem .8rem;
+  border: none;
+  border-radius: 8px;
+  background: var(--ui-accent);
+  color: var(--ui-accent-ink);
+  font-size: .78rem;
+  font-weight: 650;
+  cursor: pointer;
+}
+.linux-perm-copy:hover { filter: brightness(1.08); }
+.linux-perm-copy:focus-visible { outline: 2px solid var(--ui-accent); outline-offset: 2px; }
+.linux-perm-dismiss {
+  margin-top: .7rem;
+  padding: .3rem 0;
+  border: none;
+  background: transparent;
+  color: var(--text-faint);
+  font-size: .76rem;
+  cursor: pointer;
+}
+.linux-perm-dismiss:hover { color: var(--text-hover); }
+.linux-perm-dismiss:focus-visible { outline: 2px solid var(--ui-accent); outline-offset: 2px; }
+
 .button-remap-list { display: flex; flex-direction: column; gap: .3rem; }
 .button-remap-row { display: flex; align-items: center; justify-content: space-between; gap: .6rem; padding: .3rem .45rem; border: 1px solid transparent; border-radius: 6px; color: var(--faint); font-size: .72rem; }
 .button-remap-row .option-menu { flex: 0 1 11rem; min-width: 0; }

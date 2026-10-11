@@ -1,0 +1,17 @@
+pkgbase = openmouse-git
+	pkgdesc = Linux-first OpenMouse web panel for configuring supported mice over WebHID
+	pkgver = 2.0.0.r0.0000000
+	pkgrel = 1
+	url = https://github.com/gencayks/openmouse
+	install = openmouse.install
+	arch = any
+	license = AGPL-3.0-or-later
+	makedepends = nodejs
+	makedepends = npm
+	depends = python
+	depends = xdg-utils
+	optdepends = chromium: WebHID-capable browser for the panel
+	source = openmouse-git::git+https://github.com/gencayks/openmouse.git#branch=linux-first
+	sha256sums = SKIP
+
+pkgname = openmouse-git

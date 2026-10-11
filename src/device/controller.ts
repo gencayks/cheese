@@ -52,6 +52,7 @@ import {
   type InterfaceTheme,
 } from "../interface-preferences";
 import { batteryStateText, connectionText, ensureLocale, layerLabel, t, tp, type I18nKey } from "../i18n";
+import { describeDeniedDevice, isHidOpenDenied, isLinuxPlatform, linuxUdevFixCommand } from "../linux-permissions";
 import {
   EGG_BUTTON_NAMES,
   EggOp1HidClient,
@@ -206,6 +207,7 @@ import type {
   AnalogTuningState,
   MagneticCalibrationView,
   ControlSnapshot,
+  LinuxPermissionFix,
   ProfileView,
   DeviceCapabilities,
   DiagnosticsView,
@@ -389,6 +391,26 @@ function st(key: I18nKey, vars?: Record<string, string | number>): string {
 
 const toasts: Toast[] = [];
 let nextToastId = 1;
+
+/** Pending Linux hidraw permission fix; drives the panel in OverviewPage. */
+let linuxPermission: LinuxPermissionFix | null = null;
+
+export function dismissLinuxPermission(): void {
+  if (!linuxPermission) return;
+  linuxPermission = null;
+  emit();
+}
+
+/** Connection failures go through here so the Linux picker-succeeds /
+ * open-denied case surfaces the udev fix panel instead of only the generic
+ * toast. `picked` is the device the user granted, if any. */
+function connectionFailed(title: string, error: unknown, picked: HIDDevice | null): void {
+  if (picked && isLinuxPlatform() && isHidOpenDenied(error)) {
+    linuxPermission = { device: describeDeniedDevice(picked), command: linuxUdevFixCommand() };
+  }
+  toastForError(title, error);
+}
+
 let diagnosticsOpen = false;
 let diagnosticDownloadStatus = "";
 let diagnosticsView: DiagnosticsView = {
@@ -507,6 +529,7 @@ function buildSnapshot(): ControlSnapshot {
     onboardStatus,
     connectDisabled,
     connectLabel,
+    linuxPermission,
     toasts,
     devices: sidebarDevices,
     hasActiveDevice: activeDevice !== null,
@@ -3083,6 +3106,7 @@ async function activateClientNow(client: SupportedClient): Promise<void> {
     rememberActiveDevice(client.device);
     startAutomaticRefresh();
     setConnectionButtons(false, "Add device");
+    linuxPermission = null;
     pushToast("success", st("ctl.connectedTo", { name: statusNameForClient(client) }));
   } catch (error) {
     // A failed activation must not leave the closed client as the active one:
@@ -3327,11 +3351,13 @@ async function requestSupportedClient(): Promise<SupportedClient | null> {
 }
 
 export async function connect(): Promise<void> {
+  linuxPermission = null;
   setConnectionButtons(true, "Connecting…");
   deviceStatusText = st("ctl.requesting");
   readStatus = st("ctl.choosePrompt");
   emit();
 
+  let picked: HIDDevice | null = null;
   try {
     const client = await requestSupportedClient();
     if (!client) {
@@ -3339,6 +3365,7 @@ export async function connect(): Promise<void> {
       readStatus = st("ctl.noSelection");
       return;
     }
+    picked = client.device;
     deviceStatusText = st("ctl.opening");
     readStatus = st("ctl.reading", { name: statusNameForClient(client) });
     emit();
@@ -3353,7 +3380,7 @@ export async function connect(): Promise<void> {
     }
     deviceStatusText = wrongDevice ? st("ctl.notMouse") : st("ctl.connFailed");
     readStatus = message;
-    toastForError(wrongDevice ? "Not a mouse" : "Connection failed", error);
+    connectionFailed(wrongDevice ? "Not a mouse" : "Connection failed", error, wrongDevice ? null : picked);
   } finally {
     setConnectionButtons(false, "Add device");
   }
@@ -3364,6 +3391,7 @@ async function reconnectAuthorizedDevice(): Promise<void> {
   reconnectInFlight = true;
 
   let lastError: Error | null = null;
+  let lastDevice: HIDDevice | null = null;
   try {
     // Browsers can restore WebHID authorization a fraction of a second after the
     // page is ready. Poll quickly at first so reloads do not feel stalled, then
@@ -3398,6 +3426,7 @@ async function reconnectAuthorizedDevice(): Promise<void> {
           return;
         } catch (error) {
           lastError = error instanceof Error ? error : new Error(st("ctl.unableReconnect"));
+          lastDevice = client.device;
           await client.close().catch(() => undefined);
         }
       }
@@ -3405,7 +3434,7 @@ async function reconnectAuthorizedDevice(): Promise<void> {
     if (!hasActiveClient()) {
       deviceStatusText = st("ctl.notConnected");
       readStatus = lastError?.message ?? st("ctl.useAdd");
-      if (lastError) pushToast("error", st("ctl.couldNotReconnect"), lastError.message);
+      if (lastError) connectionFailed(st("ctl.couldNotReconnect"), lastError, lastDevice);
       emit();
     }
   } finally {

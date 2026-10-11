@@ -7,3 +7,9 @@ CHANGELOG.md
 .env.*
 !.env.example
 !.env.production
+
+# makepkg artifacts (distro/aur dogfood builds)
+distro/aur/src/
+distro/aur/pkg/
+distro/aur/openmouse-git/
+distro/aur/*.pkg.tar.*

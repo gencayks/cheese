@@ -1,0 +1,535 @@
+# OpenMouse Linux hidraw access rules.
+#
+# AUTO-GENERATED — do not edit by hand. Regenerate with:
+#   node scripts/generate-udev-rules.mjs
+# Sources: src/supported-devices-data.ts (devices) x
+# @openmouse/protocol driver registry (vendor IDs; see the generator's
+# BRAND_VIDS citations). Chromium opens the HID device before OpenMouse
+# selects its vendor collection, so every VID:PID gets its own hidraw node.
+#
+# Install with: sudo ./scripts/install-linux.sh
+
+# AJAZZ NJ07
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="a8a4", ATTRS{idProduct}=="2157", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="a8a5", ATTRS{idProduct}=="2157", TAG+="uaccess"
+# AJAZZ NJ07 MC
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="a8a4", ATTRS{idProduct}=="2167", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="a8a5", ATTRS{idProduct}=="2167", TAG+="uaccess"
+# AJAZZ NJ07 MC PRO
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="a8a4", ATTRS{idProduct}=="2177", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="a8a5", ATTRS{idProduct}=="2177", TAG+="uaccess"
+# AJAZZ NJ08
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="a8a4", ATTRS{idProduct}=="2158", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="a8a5", ATTRS{idProduct}=="2158", TAG+="uaccess"
+# AJAZZ NJ08 MC
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="a8a4", ATTRS{idProduct}=="2168", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="a8a5", ATTRS{idProduct}=="2168", TAG+="uaccess"
+# AJAZZ NJ08 MC PRO
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="a8a4", ATTRS{idProduct}=="2178", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="a8a5", ATTRS{idProduct}=="2178", TAG+="uaccess"
+# ATK ZERO
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="373b", ATTRS{idProduct}=="1154", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="373b", ATTRS{idProduct}=="1155", TAG+="uaccess"
+# Asus ROG Gladius II P502
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="0b05", ATTRS{idProduct}=="1845", TAG+="uaccess"
+# Attack Shark R3
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3151", ATTRS{idProduct}=="4026", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3151", ATTRS{idProduct}=="402d", TAG+="uaccess"
+# Attack Shark R5 Ultra (brand-VID fallback)
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="373e", ATTRS{idProduct}=="0046", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="373e", ATTRS{idProduct}=="0047", TAG+="uaccess"
+# Attack Shark X11 (brand-VID fallback)
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="25a7", ATTRS{idProduct}=="fa55", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="25a7", ATTRS{idProduct}=="fa60", TAG+="uaccess"
+# CRDRAKO KO-ONE (brand-VID fallback)
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="373e", ATTRS{idProduct}=="006a", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="373e", ATTRS{idProduct}=="006b", TAG+="uaccess"
+# Cooler Master MM711 (brand-VID fallback)
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="2516", ATTRS{idProduct}=="0101", TAG+="uaccess"
+# Corsair Ironclaw RGB Wireless
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1b1c", ATTRS{idProduct}=="1b4c", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1b1c", ATTRS{idProduct}=="1b66", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1b1c", ATTRS{idProduct}=="1bdc", TAG+="uaccess"
+# Corsair NIGHTSWORD RGB
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1b1c", ATTRS{idProduct}=="1b5c", TAG+="uaccess"
+# Dareu A950 PRO Mg
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="260d", ATTRS{idProduct}=="1114", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="260d", ATTRS{idProduct}=="1117", TAG+="uaccess"
+# Delux M800 Mini (brand-VID fallback)
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1d57", ATTRS{idProduct}=="fa55", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1d57", ATTRS{idProduct}=="fa60", TAG+="uaccess"
+# Endgame Gear OP1 8K (brand-VID fallback)
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3367", ATTRS{idProduct}=="1964", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3367", ATTRS{idProduct}=="1976", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3367", ATTRS{idProduct}=="1978", TAG+="uaccess"
+# Endgame Gear OP1we (brand-VID fallback)
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3367", ATTRS{idProduct}=="1961", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3367", ATTRS{idProduct}=="1962", TAG+="uaccess"
+# Endgame Gear XM2 8K (brand-VID fallback)
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3367", ATTRS{idProduct}=="1966", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3367", ATTRS{idProduct}=="1980", TAG+="uaccess"
+# Finalmouse Starlight-12 / ULX
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="361d", ATTRS{idProduct}=="0100", TAG+="uaccess"
+# Glorious Model D Wireless
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="22d4", ATTRS{idProduct}=="2012", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="22d4", ATTRS{idProduct}=="2023", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="258a", ATTRS{idProduct}=="2012", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="258a", ATTRS{idProduct}=="2023", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="320f", ATTRS{idProduct}=="2012", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="320f", ATTRS{idProduct}=="2023", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3794", ATTRS{idProduct}=="2012", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3794", ATTRS{idProduct}=="2023", TAG+="uaccess"
+# Glorious Model D2 Pro Wireless 8K
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="22d4", ATTRS{idProduct}=="201c", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="22d4", ATTRS{idProduct}=="2036", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="258a", ATTRS{idProduct}=="201c", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="258a", ATTRS{idProduct}=="2036", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="320f", ATTRS{idProduct}=="201c", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="320f", ATTRS{idProduct}=="2036", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3794", ATTRS{idProduct}=="201c", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3794", ATTRS{idProduct}=="2036", TAG+="uaccess"
+# Glorious Model O
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="22d4", ATTRS{idProduct}=="2011", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="22d4", ATTRS{idProduct}=="2022", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="258a", ATTRS{idProduct}=="2011", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="258a", ATTRS{idProduct}=="2022", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="320f", ATTRS{idProduct}=="2011", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="320f", ATTRS{idProduct}=="2022", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3794", ATTRS{idProduct}=="2011", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3794", ATTRS{idProduct}=="2022", TAG+="uaccess"
+# Glorious Model O 2 Pro Wireless
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="22d4", ATTRS{idProduct}=="2033", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="258a", ATTRS{idProduct}=="2033", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="320f", ATTRS{idProduct}=="2033", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3794", ATTRS{idProduct}=="2033", TAG+="uaccess"
+# Glorious Model O Pro
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="22d4", ATTRS{idProduct}=="2015", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="22d4", ATTRS{idProduct}=="2027", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="258a", ATTRS{idProduct}=="2015", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="258a", ATTRS{idProduct}=="2027", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="320f", ATTRS{idProduct}=="2015", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="320f", ATTRS{idProduct}=="2027", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3794", ATTRS{idProduct}=="2015", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3794", ATTRS{idProduct}=="2027", TAG+="uaccess"
+# Glorious Model O2 Pro 4K/8K
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="258a", ATTRS{idProduct}=="201b", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="258a", ATTRS{idProduct}=="2035", TAG+="uaccess"
+# Glorious Model O3 Wireless
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="22d4", ATTRS{idProduct}=="a300", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="22d4", ATTRS{idProduct}=="a312", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="258a", ATTRS{idProduct}=="a300", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="258a", ATTRS{idProduct}=="a312", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="320f", ATTRS{idProduct}=="a300", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="320f", ATTRS{idProduct}=="a312", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3794", ATTRS{idProduct}=="a300", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3794", ATTRS{idProduct}=="a312", TAG+="uaccess"
+# HyperX Pulsefire Haste
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="03f0", ATTRS{idProduct}=="028e", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="03f0", ATTRS{idProduct}=="048e", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="03f0", ATTRS{idProduct}=="0f8f", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="0951", ATTRS{idProduct}=="1727", TAG+="uaccess"
+# IPI Float 88 (brand-VID fallback)
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="372e", ATTRS{idProduct}=="1014", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="372e", ATTRS{idProduct}=="1015", TAG+="uaccess"
+# Incott G23 V2 (SE / Pro)
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="093a", ATTRS{idProduct}=="522c", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="093a", ATTRS{idProduct}=="622c", TAG+="uaccess"
+# K-snake X11
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="a8a4", ATTRS{idProduct}=="2255", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="a8a5", ATTRS{idProduct}=="2255", TAG+="uaccess"
+# Keychron M6
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3434", ATTRS{idProduct}=="d029", TAG+="uaccess"
+# Keychron M6 (brand-VID fallback)
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3434", ATTRS{idProduct}=="d060", TAG+="uaccess"
+# Keychron Nape Pro
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3434", ATTRS{idProduct}=="0440", TAG+="uaccess"
+# Lamzu Atlantis (shared family ids) (brand-VID fallback)
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3554", ATTRS{idProduct}=="f50f", TAG+="uaccess"
+# Lamzu Inca
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="37b0", ATTRS{idProduct}=="0009", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="37b0", ATTRS{idProduct}=="000f", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="37b0", ATTRS{idProduct}=="0010", TAG+="uaccess"
+# Lamzu Maya X (brand-VID fallback)
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="373e", ATTRS{idProduct}=="001c", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="373e", ATTRS{idProduct}=="001d", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="373e", ATTRS{idProduct}=="001e", TAG+="uaccess"
+# Logitech G Pro (2017) (brand-VID fallback)
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="c085", TAG+="uaccess"
+# Logitech G Pro 2 Lightspeed (brand-VID fallback)
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="c09a", TAG+="uaccess"
+# Logitech G Pro Hero (brand-VID fallback)
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="c08c", TAG+="uaccess"
+# Logitech G Pro X Superlight (brand-VID fallback)
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="c094", TAG+="uaccess"
+# Logitech G102 LIGHTSYNC (brand-VID fallback)
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="c089", TAG+="uaccess"
+# Logitech G203 LIGHTSYNC (brand-VID fallback)
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="c092", TAG+="uaccess"
+# Logitech G203 PRODIGY (brand-VID fallback)
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="c084", TAG+="uaccess"
+# Logitech G303 Daedalus Apex (brand-VID fallback)
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="c080", TAG+="uaccess"
+# Logitech G402 Hyperion Fury (brand-VID fallback)
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="c07e", TAG+="uaccess"
+# Logitech G403 HERO (wired) (brand-VID fallback)
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="c08f", TAG+="uaccess"
+# Logitech G502 (all variants) (brand-VID fallback)
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="c07d", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="c08b", TAG+="uaccess"
+# Logitech G502 X (wired) (brand-VID fallback)
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="c099", TAG+="uaccess"
+# Logitech G502 X LIGHTSPEED (brand-VID fallback)
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="c098", TAG+="uaccess"
+# Logitech G502 X PLUS (wireless) (brand-VID fallback)
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="c095", TAG+="uaccess"
+# Logitech G903 HERO (wired) (brand-VID fallback)
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="c08e", TAG+="uaccess"
+# Logitech MX Master 3S (brand-VID fallback)
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="c548", TAG+="uaccess"
+# Logitech PRO X SUPERLIGHT 2 (brand-VID fallback)
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="c09b", TAG+="uaccess"
+# Logitech PRO X SUPERLIGHT 2 DEX (brand-VID fallback)
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="c0a0", TAG+="uaccess"
+# Logitech PRO X2 SUPERSTRIKE (brand-VID fallback)
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="c0a8", TAG+="uaccess"
+# LunaFury LUNA33 (brand-VID fallback)
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="373e", ATTRS{idProduct}=="0032", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="373e", ATTRS{idProduct}=="0033", TAG+="uaccess"
+# LunaFury TYPE33 (brand-VID fallback)
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="373e", ATTRS{idProduct}=="0054", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="373e", ATTRS{idProduct}=="0084", TAG+="uaccess"
+# Mchose A5 Pro Max
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="2023", ATTRS{idProduct}=="f013", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="2023", ATTRS{idProduct}=="f015", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="2023", ATTRS{idProduct}=="f019", TAG+="uaccess"
+# Mchose A7 V2 Ultra+ (brand-VID fallback)
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3837", ATTRS{idProduct}=="100b", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3837", ATTRS{idProduct}=="4021", TAG+="uaccess"
+# Mchose A7 V3 (brand-VID fallback)
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3837", ATTRS{idProduct}=="4030", TAG+="uaccess"
+# Mchose A7 V3 Pro (brand-VID fallback)
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3837", ATTRS{idProduct}=="4031", TAG+="uaccess"
+# Mchose A7 V3 Pro+ (brand-VID fallback)
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3837", ATTRS{idProduct}=="4032", TAG+="uaccess"
+# Mchose A7 V3 Ultra+ (brand-VID fallback)
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3837", ATTRS{idProduct}=="1014", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3837", ATTRS{idProduct}=="1018", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3837", ATTRS{idProduct}=="4033", TAG+="uaccess"
+# Mchose MagDock (charging base)
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3837", ATTRS{idProduct}=="1012", TAG+="uaccess"
+# Microsoft Classic Intellimouse
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="045e", ATTRS{idProduct}=="0823", TAG+="uaccess"
+# Microsoft Pro Intellimouse
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="045e", ATTRS{idProduct}=="082a", TAG+="uaccess"
+# Ninjutso Sora V2
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1915", ATTRS{idProduct}=="ae11", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1915", ATTRS{idProduct}=="ae12", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1915", ATTRS{idProduct}=="ae13", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1915", ATTRS{idProduct}=="ae14", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1915", ATTRS{idProduct}=="ae15", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1915", ATTRS{idProduct}=="ae16", TAG+="uaccess"
+# Ninjutso Sora V3
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="093a", ATTRS{idProduct}=="e010", TAG+="uaccess"
+# Ninjutso TEN
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="093a", ATTRS{idProduct}=="e020", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="093a", ATTRS{idProduct}=="ea01", TAG+="uaccess"
+# Noir Gear M2-NEX (brand-VID fallback)
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3554", ATTRS{idProduct}=="2255", TAG+="uaccess"
+# Orbital Ghost / Pathfinder V2 (brand-VID fallback)
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1915", ATTRS{idProduct}=="080c", TAG+="uaccess"
+# Pulsar X3 Medium
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3710", ATTRS{idProduct}=="3409", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3710", ATTRS{idProduct}=="3410", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3710", ATTRS{idProduct}=="5402", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3710", ATTRS{idProduct}=="5403", TAG+="uaccess"
+# RAWM Blade 1
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1915", ATTRS{idProduct}=="2328", TAG+="uaccess"
+# RAWM ER21 Pro
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1915", ATTRS{idProduct}=="2338", TAG+="uaccess"
+# RAWM ER21M
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1915", ATTRS{idProduct}=="2339", TAG+="uaccess"
+# RAWM ES21
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1915", ATTRS{idProduct}=="2333", TAG+="uaccess"
+# RAWM ES21 Pro
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1915", ATTRS{idProduct}=="2334", TAG+="uaccess"
+# RAWM ES21M
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1915", ATTRS{idProduct}=="2337", TAG+="uaccess"
+# RAWM MH01
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1915", ATTRS{idProduct}=="232c", TAG+="uaccess"
+# RAWM MH01 Pro
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1915", ATTRS{idProduct}=="2331", TAG+="uaccess"
+# RAWM ML01
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1915", ATTRS{idProduct}=="2329", TAG+="uaccess"
+# RAWM SH01
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1915", ATTRS{idProduct}=="232e", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1915", ATTRS{idProduct}=="232f", TAG+="uaccess"
+# RAWM SH01 Pro
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1915", ATTRS{idProduct}=="2330", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1915", ATTRS{idProduct}=="2332", TAG+="uaccess"
+# RAWM SL01
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1915", ATTRS{idProduct}=="232d", TAG+="uaccess"
+# Razer Abyssus 1800
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="0020", TAG+="uaccess"
+# Razer Abyssus 2000
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="005e", TAG+="uaccess"
+# Razer Abyssus 2014
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="0042", TAG+="uaccess"
+# Razer Abyssus Elite (D.Va Edition)
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="006a", TAG+="uaccess"
+# Razer Abyssus Essential
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="006b", TAG+="uaccess"
+# Razer Abyssus V2
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="005b", TAG+="uaccess"
+# Razer Atheris
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="0062", TAG+="uaccess"
+# Razer Basilisk Mobile
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="00d3", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="00d4", TAG+="uaccess"
+# Razer Basilisk V2
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="0085", TAG+="uaccess"
+# Razer Basilisk V3 35K
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="00cb", TAG+="uaccess"
+# Razer Basilisk V3 Pro 35K
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="00cc", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="00cd", TAG+="uaccess"
+# Razer Basilisk V3 Pro 35K Phantom Green
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="00d6", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="00d7", TAG+="uaccess"
+# Razer Basilisk V3 X HyperSpeed
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="00b9", TAG+="uaccess"
+# Razer Cobra
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="00a3", TAG+="uaccess"
+# Razer Cobra Pro
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="00af", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="00b0", TAG+="uaccess"
+# Razer DeathAdder 1800
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="0038", TAG+="uaccess"
+# Razer DeathAdder 2000
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="004f", TAG+="uaccess"
+# Razer DeathAdder 2013
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="0037", TAG+="uaccess"
+# Razer DeathAdder 3500
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="0054", TAG+="uaccess"
+# Razer DeathAdder Chroma
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="0043", TAG+="uaccess"
+# Razer DeathAdder Elite
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="005c", TAG+="uaccess"
+# Razer DeathAdder Essential
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="006e", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="0071", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="0098", TAG+="uaccess"
+# Razer DeathAdder V2 (wired)
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="0084", TAG+="uaccess"
+# Razer DeathAdder V2 Lite
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="00a1", TAG+="uaccess"
+# Razer DeathAdder V2 Mini
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="008c", TAG+="uaccess"
+# Razer DeathAdder V2 Pro
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="007c", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="007d", TAG+="uaccess"
+# Razer DeathAdder V3 HyperSpeed
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="00c4", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="00c5", TAG+="uaccess"
+# Razer DeathAdder V3 Pro
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="00b6", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="00b7", TAG+="uaccess"
+# Razer DeathAdder V4 Pro
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="00be", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="00bf", TAG+="uaccess"
+# Razer DeathAdder V4 Pro Carbon Fiber Edition
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="00ef", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="00f0", TAG+="uaccess"
+# Razer Diamondback Chroma
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="004c", TAG+="uaccess"
+# Razer Imperator 2012
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="002f", TAG+="uaccess"
+# Razer Lancehead
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="0059", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="005a", TAG+="uaccess"
+# Razer Lancehead Tournament Edition
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="0060", TAG+="uaccess"
+# Razer Lancehead Wireless
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="006f", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="0070", TAG+="uaccess"
+# Razer Mamba
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="0044", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="0045", TAG+="uaccess"
+# Razer Mamba 2012
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="0024", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="0025", TAG+="uaccess"
+# Razer Mamba Elite
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="006c", TAG+="uaccess"
+# Razer Mamba Tournament Edition
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="0046", TAG+="uaccess"
+# Razer Mamba Wireless
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="0072", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="0073", TAG+="uaccess"
+# Razer Naga
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="0015", TAG+="uaccess"
+# Razer Naga 2012
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="002e", TAG+="uaccess"
+# Razer Naga 2014
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="0040", TAG+="uaccess"
+# Razer Naga Chroma
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="0053", TAG+="uaccess"
+# Razer Naga Epic
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="001f", TAG+="uaccess"
+# Razer Naga Epic Chroma
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="003e", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="003f", TAG+="uaccess"
+# Razer Naga Hex
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="0041", TAG+="uaccess"
+# Razer Naga Hex (Red)
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="0036", TAG+="uaccess"
+# Razer Naga Hex V2
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="0050", TAG+="uaccess"
+# Razer Naga Left-Handed Edition 2020
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="008d", TAG+="uaccess"
+# Razer Naga Pro
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="008f", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="0090", TAG+="uaccess"
+# Razer Orochi
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="0048", TAG+="uaccess"
+# Razer Orochi 2013
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="0039", TAG+="uaccess"
+# Razer Ouroboros 2012
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="0032", TAG+="uaccess"
+# Razer Pro Click
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="0077", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="0080", TAG+="uaccess"
+# Razer Pro Click Mini
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="009a", TAG+="uaccess"
+# Razer Pro Click V2
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="00d0", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="00d1", TAG+="uaccess"
+# Razer Pro Click V2 Vertical Edition
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="00c7", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="00c8", TAG+="uaccess"
+# Razer Taipan
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="0034", TAG+="uaccess"
+# Razer Viper Mini
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="008a", TAG+="uaccess"
+# Razer Viper Mini Signature Edition
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="009e", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="009f", TAG+="uaccess"
+# Razer Viper V2 Pro
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="00a5", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="00a6", TAG+="uaccess"
+# Razer Viper V2 Pro (HyperPolling 8000 Hz)
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="00b3", TAG+="uaccess"
+# Razer Viper V3 HyperSpeed
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="00b8", TAG+="uaccess"
+# Razer Viper V3 Pro
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="00c0", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="00c1", TAG+="uaccess"
+# Razer Viper V3 Pro SE
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="00de", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="00df", TAG+="uaccess"
+# Razer Viper V4 Pro
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="00e5", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1532", ATTRS{idProduct}=="00e6", TAG+="uaccess"
+# Redragon M690 PRO
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="258a", ATTRS{idProduct}=="002e", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="258a", ATTRS{idProduct}=="002f", TAG+="uaccess"
+# Redragon M724 K1NG 1K
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="04d9", ATTRS{idProduct}=="fc7a", TAG+="uaccess"
+# Ryunix KYU Pro MX1
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="04f3", ATTRS{idProduct}=="026e", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="04f3", ATTRS{idProduct}=="026f", TAG+="uaccess"
+# SteelSeries Aerox 3
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1038", ATTRS{idProduct}=="1836", TAG+="uaccess"
+# SteelSeries Aerox 5
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1038", ATTRS{idProduct}=="1850", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1038", ATTRS{idProduct}=="1852", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1038", ATTRS{idProduct}=="1854", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1038", ATTRS{idProduct}=="185c", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1038", ATTRS{idProduct}=="185e", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1038", ATTRS{idProduct}=="1860", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1038", ATTRS{idProduct}=="1862", TAG+="uaccess"
+# SteelSeries Aerox 9 Wireless
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1038", ATTRS{idProduct}=="1858", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1038", ATTRS{idProduct}=="185a", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1038", ATTRS{idProduct}=="1874", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1038", ATTRS{idProduct}=="1876", TAG+="uaccess"
+# SteelSeries Prime Mini Wireless
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1038", ATTRS{idProduct}=="1848", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1038", ATTRS{idProduct}=="184a", TAG+="uaccess"
+# SteelSeries Prime+
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1038", ATTRS{idProduct}=="182c", TAG+="uaccess"
+# SteelSeries Rival 3 (wired)
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1038", ATTRS{idProduct}=="1824", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1038", ATTRS{idProduct}=="184c", TAG+="uaccess"
+# SteelSeries Rival 3 Wireless
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1038", ATTRS{idProduct}=="1830", TAG+="uaccess"
+# SteelSeries Rival 310
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1038", ATTRS{idProduct}=="171e", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1038", ATTRS{idProduct}=="1720", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1038", ATTRS{idProduct}=="1736", TAG+="uaccess"
+# SteelSeries Rival 650 Wireless
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1038", ATTRS{idProduct}=="1726", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1038", ATTRS{idProduct}=="172b", TAG+="uaccess"
+# SteelSeries Sensei Ten
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1038", ATTRS{idProduct}=="1832", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="1038", ATTRS{idProduct}=="1834", TAG+="uaccess"
+# Teevolution Terra Pro
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3554", ATTRS{idProduct}=="f520", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3554", ATTRS{idProduct}=="f522", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3554", ATTRS{idProduct}=="f523", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3554", ATTRS{idProduct}=="f5bb", TAG+="uaccess"
+# VAXEE AX Wireless
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3057", ATTRS{idProduct}=="1005", TAG+="uaccess"
+# VAXEE E1 Wireless
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3057", ATTRS{idProduct}=="1010", TAG+="uaccess"
+# VAXEE NP-01 Ergo Wireless
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3057", ATTRS{idProduct}=="1015", TAG+="uaccess"
+# VAXEE NP-01 Wireless
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3057", ATTRS{idProduct}=="1006", TAG+="uaccess"
+# VAXEE NP-01S Ergo Wireless
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3057", ATTRS{idProduct}=="1013", TAG+="uaccess"
+# VAXEE NP-01S V2 Wireless
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3057", ATTRS{idProduct}=="1011", TAG+="uaccess"
+# VAXEE NP-01S V3 Wireless
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3057", ATTRS{idProduct}=="1014", TAG+="uaccess"
+# VAXEE NP-01S Wireless
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3057", ATTRS{idProduct}=="1004", TAG+="uaccess"
+# VAXEE VAXEE x Ninjutso Sora
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3057", ATTRS{idProduct}=="1009", TAG+="uaccess"
+# VAXEE XE V2 Wireless
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3057", ATTRS{idProduct}=="1012", TAG+="uaccess"
+# VAXEE XE Wireless
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3057", ATTRS{idProduct}=="1003", TAG+="uaccess"
+# VAXEE XE-S Wireless
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3057", ATTRS{idProduct}=="1007", TAG+="uaccess"
+# VAXEE XE-S-L Wireless
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3057", ATTRS{idProduct}=="1008", TAG+="uaccess"
+# VGN Dragonfly F2 Master+
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3554", ATTRS{idProduct}=="fb56", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3554", ATTRS{idProduct}=="fb57", TAG+="uaccess"
+# VXE R1 Pro Max
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3554", ATTRS{idProduct}=="f58a", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3554", ATTRS{idProduct}=="f58c", TAG+="uaccess"
+# VXE R1 SE+
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3554", ATTRS{idProduct}=="f58e", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3554", ATTRS{idProduct}=="f58f", TAG+="uaccess"
+# WALLHACK M-001
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3879", ATTRS{idProduct}=="0807", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3879", ATTRS{idProduct}=="1110", TAG+="uaccess"
+# WLMouse Beast Max (brand-VID fallback)
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="36a7", ATTRS{idProduct}=="a880", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="36a7", ATTRS{idProduct}=="a881", TAG+="uaccess"
+# WLMouse Beast Mini (brand-VID fallback)
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="36a7", ATTRS{idProduct}=="a885", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="36a7", ATTRS{idProduct}=="a886", TAG+="uaccess"
+# WLMouse Beast X (brand-VID fallback)
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="36a7", ATTRS{idProduct}=="a883", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="36a7", ATTRS{idProduct}=="a884", TAG+="uaccess"
+# WLMouse Beast X Pro (brand-VID fallback)
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="36a7", ATTRS{idProduct}=="a870", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="36a7", ATTRS{idProduct}=="a871", TAG+="uaccess"
+# WLMouse Sword X (brand-VID fallback)
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="36a7", ATTRS{idProduct}=="a878", TAG+="uaccess"
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="36a7", ATTRS{idProduct}=="a879", TAG+="uaccess"
+# Zaunkoenig M2K
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="a3cf", TAG+="uaccess"
+# Zaunkoenig M3K
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="a462", TAG+="uaccess"

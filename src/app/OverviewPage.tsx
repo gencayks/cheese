@@ -462,6 +462,45 @@ function MouseArtworkShowcase({ reducedMotion }: { reducedMotion: boolean }): Re
   );
 }
 
+function LinuxPermissionPanel({ snapshot }: { snapshot: ControlSnapshot }): ReactNode {
+  const fix = snapshot.linuxPermission;
+  const locale = snapshot.preferences.locale;
+  const [copied, setCopied] = useState(false);
+  if (!fix) return null;
+  const command = fix.command;
+  async function copyCommand(): Promise<void> {
+    try {
+      await navigator.clipboard.writeText(command);
+    } catch {
+      // Clipboard API needs a secure context; fall back to a selected field.
+      const area = document.createElement("textarea");
+      area.value = command;
+      document.body.appendChild(area);
+      area.select();
+      document.execCommand("copy");
+      area.remove();
+    }
+    setCopied(true);
+    window.setTimeout(() => setCopied(false), 2500);
+  }
+  return (
+    <section className="linux-perm-panel" aria-label={t(locale, "linux.permTitle")}>
+      <strong className="linux-perm-title">{t(locale, "linux.permTitle")}</strong>
+      <p className="linux-perm-body">{tp(locale, "linux.permBody", { device: fix.device })}</p>
+      <p className="linux-perm-intro">{t(locale, "linux.permCommandIntro")}</p>
+      <div className="linux-perm-command-row">
+        <code className="linux-perm-command">{command}</code>
+        <button type="button" className="linux-perm-copy" onClick={() => void copyCommand()}>
+          {copied ? t(locale, "linux.permCopied") : t(locale, "linux.permCopy")}
+        </button>
+      </div>
+      <button type="button" className="linux-perm-dismiss" onClick={() => control.dismissLinuxPermission()}>
+        {t(locale, "linux.permDismiss")}
+      </button>
+    </section>
+  );
+}
+
 function AddDeviceCard({ snapshot }: { snapshot: ControlSnapshot }): ReactNode {
   const locale = snapshot.preferences.locale;
   const [busy, setBusy] = useState(false);
@@ -494,6 +533,7 @@ function OverviewEmpty({ snapshot, compact = false }: { snapshot: ControlSnapsho
   const locale = snapshot.preferences.locale;
   return (
     <div className={`welcome-screen${compact ? " is-compact" : ""}`}>
+      <LinuxPermissionPanel snapshot={snapshot} />
       <div className="welcome-aurora" aria-hidden="true">
         <i /><i /><i />
       </div>
@@ -768,6 +808,7 @@ function DeviceListView({ snapshot }: { snapshot: ControlSnapshot }): ReactNode 
 
   return (
     <div className="welcome-with-devices">
+      <LinuxPermissionPanel snapshot={snapshot} />
       <section className="detected-devices" aria-label={t(locale, "side.connectedDevices")}>
         <ul className="device-grid">
             {(() => {

@@ -1,0 +1,38 @@
+# Maintainer: gencayks
+# NOTE: tracks the `linux-first` branch until it merges — drop the
+# #branch pin (and the -git suffix if a release is tagged) on merge.
+pkgname=openmouse-git
+pkgver=2.0.0.r1206.200774e
+pkgrel=1
+pkgdesc="Linux-first OpenMouse web panel for configuring supported mice over WebHID"
+arch=('any')
+url="https://github.com/gencayks/openmouse"
+license=('AGPL-3.0-or-later')
+depends=('python' 'xdg-utils')
+makedepends=('nodejs' 'npm')
+optdepends=('chromium: WebHID-capable browser for the panel')
+source=("${pkgname}::git+${url}.git#branch=linux-first")
+sha256sums=('SKIP')
+install=openmouse.install
+
+pkgver() {
+  cd "${pkgname}"
+  printf "2.0.0.r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
+build() {
+  cd "${pkgname}"
+  npm ci --no-audit --no-fund
+  npm run build
+}
+
+package() {
+  cd "${pkgname}"
+  install -dm755 "${pkgdir}/usr/share/openmouse"
+  cp -r dist/. "${pkgdir}/usr/share/openmouse/"
+  install -Dm644 udev/70-openmouse.rules "${pkgdir}/usr/lib/udev/rules.d/70-openmouse.rules"
+  install -Dm755 distro/aur/openmouse.sh "${pkgdir}/usr/bin/openmouse"
+  install -Dm644 distro/aur/openmouse.desktop "${pkgdir}/usr/share/applications/openmouse.desktop"
+  install -Dm644 dist/icon-512.png "${pkgdir}/usr/share/icons/hicolor/512x512/apps/openmouse.png"
+  install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+}
