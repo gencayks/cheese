@@ -19,7 +19,7 @@ test("installer URL pins the branch carrying the script", () => {
   // /<owner>/<repo>/<ref>/scripts/install-linux.sh — a wrong ref 404s the
   // copy-paste fix command (Task 2 review finding), so pin it explicitly.
   const parts = new URL(LINUX_UDEV_INSTALLER_URL).pathname.split("/");
-  assert.deepEqual(parts.slice(0, 3), ["", "gencayks", "openmouse"]);
+  assert.deepEqual(parts.slice(0, 3), ["", "gencayks", "cheese"]);
   assert.equal(parts[3], "main");
   assert.deepEqual(parts.slice(4), ["scripts", "install-linux.sh"]);
 });
